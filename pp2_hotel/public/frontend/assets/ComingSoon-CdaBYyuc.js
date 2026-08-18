@@ -1,0 +1,2 @@
+import{P as t}from"./PageContainer-D6KTHqB8.js";import{_ as i}from"./EmptyState.vue_vue_type_script_setup_true_lang-CfJSgW2E.js";import{d as a,o,c as n,w as s,a as r,b as c}from"./index-0rTmleYC.js";const l={class:"flex min-h-[60vh] items-center justify-center"},u=a({__name:"ComingSoon",props:{title:{},description:{default:"Coming in a later phase."}},setup(e){return(m,d)=>(o(),n(t,null,{default:s(()=>[r("div",l,[c(i,{title:e.title,description:e.description},null,8,["title","description"])])]),_:1}))}});export{u as default};
+//# sourceMappingURL=ComingSoon-CdaBYyuc.js.map

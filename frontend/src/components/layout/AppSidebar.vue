@@ -1,9 +1,26 @@
 <script setup lang="ts">
-import { BedDouble, ChevronsLeft, ChevronsRight, X } from 'lucide-vue-next'
+import { ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { BedDouble, ChevronDown, ChevronsLeft, ChevronsRight, X } from 'lucide-vue-next'
 import AppSidebarNav from './AppSidebarNav.vue'
 import { useUiStore } from '@/stores/ui'
 
 const ui = useUiStore()
+
+// App-switcher dropdown off the sidebar header's logo/wordmark -- same
+// trigger/panel/onClickOutside shape as TopBar.vue's own user menu.
+// "Workspaces"/"Website"/"Edit Sidebar"/"Display"/"Session Defaults" from
+// Frappe Desk's own equivalent menu are deliberately left out: this is a
+// standalone Vue SPA with no Workspace or Website-builder concept of its
+// own, so those items would open onto nothing. "Desktop" (-> /app) and
+// "Log out" are real, existing destinations; "Reload" is a real action.
+const appMenuOpen = ref(false)
+const appMenuRef = ref(null)
+onClickOutside(appMenuRef, () => (appMenuOpen.value = false))
+
+function reload() {
+	window.location.reload()
+}
 </script>
 
 <template>
@@ -12,13 +29,45 @@ const ui = useUiStore()
 		class="hidden shrink-0 flex-col border-r border-app-border bg-app-surface transition-[width] duration-150 md:flex"
 		:class="ui.sidebarCollapsed ? 'w-16' : 'w-64'"
 	>
-		<div class="flex h-14 shrink-0 items-center gap-2 border-b border-app-border px-4">
-			<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-app-sm bg-app-primary text-white">
-				<BedDouble :size="18" />
+		<div ref="appMenuRef" class="relative shrink-0 border-b border-app-border">
+			<button
+				type="button"
+				class="flex h-14 w-full items-center gap-2 px-4 hover:bg-app-bg"
+				@click="appMenuOpen = !appMenuOpen"
+			>
+				<div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-app-sm bg-app-primary text-white">
+					<BedDouble :size="18" />
+				</div>
+				<span v-if="!ui.sidebarCollapsed" class="truncate text-[14px] font-semibold leading-[20px] text-app-text">
+					PP2 Hotel
+				</span>
+				<ChevronDown v-if="!ui.sidebarCollapsed" :size="15" class="ml-auto shrink-0 text-app-muted" />
+			</button>
+			<div
+				v-if="appMenuOpen"
+				class="absolute left-2 top-full z-20 mt-1 w-48 rounded-app-md border border-app-border bg-app-surface py-1 shadow-lg"
+			>
+				<a
+					href="/app"
+					class="block w-full px-3 py-2 text-left text-[13px] leading-[16px] text-app-text hover:bg-app-bg"
+				>
+					Desktop
+				</a>
+				<button
+					type="button"
+					class="block w-full px-3 py-2 text-left text-[13px] leading-[16px] text-app-text hover:bg-app-bg"
+					@click="reload"
+				>
+					Reload
+				</button>
+				<div class="my-1 border-t border-app-border"></div>
+				<a
+					href="/api/method/logout"
+					class="block w-full px-3 py-2 text-left text-[13px] leading-[16px] text-app-text hover:bg-app-bg"
+				>
+					Log out
+				</a>
 			</div>
-			<span v-if="!ui.sidebarCollapsed" class="truncate text-[14px] font-semibold leading-[20px] text-app-text">
-				PP2 Hotel
-			</span>
 		</div>
 
 		<AppSidebarNav :collapsed="ui.sidebarCollapsed" />
