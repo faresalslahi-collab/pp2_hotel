@@ -1,0 +1,9 @@
+Hotel Setup
+Hotel Rooms
+Hotel Guests
+Hotel Reservations
+Hotel Front Office
+Hotel Billing
+Hotel Services
+Hotel Housekeeping
+Hotel Maintenance

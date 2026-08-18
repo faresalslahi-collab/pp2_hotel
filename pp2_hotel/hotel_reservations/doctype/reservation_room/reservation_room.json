@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-08-18 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "room_type",
+  "room",
+  "column_break_dates",
+  "arrival",
+  "departure",
+  "column_break_occ",
+  "adults",
+  "children",
+  "rate",
+  "hotel_stay"
+ ],
+ "fields": [
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1
+  },
+  {
+   "description": "Optional -- may be left blank and assigned at check-in.",
+   "fieldname": "room",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room",
+   "options": "Room"
+  },
+  {
+   "fieldname": "column_break_dates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "arrival",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Arrival",
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Departure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_occ",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "adults",
+   "fieldtype": "Int",
+   "label": "Adults"
+  },
+  {
+   "default": "0",
+   "fieldname": "children",
+   "fieldtype": "Int",
+   "label": "Children"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "description": "Set once this line is checked in.",
+   "fieldname": "hotel_stay",
+   "fieldtype": "Link",
+   "label": "Hotel Stay",
+   "options": "Hotel Stay",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-08-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotel Reservations",
+ "name": "Reservation Room",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

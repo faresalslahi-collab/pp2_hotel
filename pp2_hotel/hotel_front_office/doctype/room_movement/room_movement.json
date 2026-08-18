@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-08-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "hotel_stay",
+  "guest",
+  "movement_date",
+  "column_break_rooms",
+  "from_room",
+  "to_room",
+  "section_break_rates",
+  "old_rate",
+  "new_rate",
+  "column_break_diff",
+  "rate_difference",
+  "section_break_reason",
+  "reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RM-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hotel_stay",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Hotel Stay",
+   "options": "Hotel Stay",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "hotel_stay.guest",
+   "fieldname": "guest",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guest",
+   "options": "Guest",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "movement_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Movement Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rooms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_room",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "From Room",
+   "options": "Room",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_room",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "To Room",
+   "options": "Room",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_rates",
+   "fieldtype": "Section Break",
+   "label": "Financial Impact"
+  },
+  {
+   "fieldname": "old_rate",
+   "fieldtype": "Currency",
+   "label": "Old Rate"
+  },
+  {
+   "fieldname": "new_rate",
+   "fieldtype": "Currency",
+   "label": "New Rate"
+  },
+  {
+   "fieldname": "column_break_diff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate_difference",
+   "fieldtype": "Currency",
+   "label": "Rate Difference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_reason",
+   "fieldtype": "Section Break",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "links": [],
+ "modified": "2026-08-18 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotel Front Office",
+ "name": "Room Movement",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Hotel Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Hotel Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Front Desk Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "Receptionist",
+   "share": 0,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "email": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "Cashier",
+   "share": 0,
+   "write": 0
+  },
+  {
+   "create": 0,
+   "email": 0,
+   "export": 0,
+   "print": 0,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Design tokens -- single source of truth for the app's own visual layer
+ * (AppSidebar, TopBar, StatusBadge, RoomCard, ...). Mirrored into
+ * tailwind.config.js's `app.*` color / `app-*` radius keys so components
+ * can use either `bg-app-surface` (Tailwind) or `var(--color-surface)`
+ * (plain CSS) and get the same value from one place.
+ *
+ * Deliberately separate from frappe-ui's own CSS variables (--surface-*,
+ * --ink-*, --outline-*) -- those belong to frappe-ui's imported components
+ * (Button, FormControl, Dialog, ...) and are left untouched so those
+ * components keep looking internally consistent with themselves.
+ */
+:root {
+	--color-bg: #f7f8f7;
+	--color-surface: #ffffff;
+	--color-border: #e3e7e4;
+	--color-text: #16211d;
+	--color-muted: #5f6b66;
+	--color-disabled: #9ca6a2;
+
+	--color-primary: #0f5c52;
+	--color-primary-hover: #0b463f;
+	--color-primary-surface: #e6f1ef;
+
+	--color-success: #1e8e5a;
+	--color-success-surface: #e7f5ec;
+	--color-warning: #b7791f;
+	--color-warning-surface: #fbf1df;
+	--color-danger: #c0392b;
+	--color-danger-surface: #fbeae8;
+	--color-info: #2563a8;
+	--color-info-surface: #e9f1fa;
+
+	--radius-sm: 6px;
+	--radius-md: 8px;
+}
+
+body {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+
+/**
+ * A thin, design-system-colored scrollbar for this app's own scrollable
+ * containers (the sidebar nav, the main content area) instead of each
+ * browser/OS's own default -- some render a wide, high-contrast classic
+ * scrollbar (with visible track arrows) that looks like a foreign,
+ * broken-looking element inside the collapsed w-16 icon rail in
+ * particular. Applied via a class (`.pp2-scroll`) rather than globally on
+ * every `overflow-auto` in the app, since frappe-ui's own imported
+ * components (Dialog, Combobox, ...) should keep their own scrollbar
+ * styling untouched.
+ */
+.pp2-scroll {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-disabled) transparent;
+}
+.pp2-scroll::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+.pp2-scroll::-webkit-scrollbar-track {
+	background: transparent;
+}
+.pp2-scroll::-webkit-scrollbar-thumb {
+	background-color: var(--color-disabled);
+	border-radius: 999px;
+}

@@ -1,0 +1,79 @@
+[
+ {
+  "doctype": "Role",
+  "name": "Hotel Administrator",
+  "role_name": "Hotel Administrator",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Hotel Manager",
+  "role_name": "Hotel Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Front Desk Manager",
+  "role_name": "Front Desk Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Receptionist",
+  "role_name": "Receptionist",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Cashier",
+  "role_name": "Cashier",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Housekeeping Manager",
+  "role_name": "Housekeeping Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Housekeeper",
+  "role_name": "Housekeeper",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Accountant",
+  "role_name": "Accountant",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Maintenance Manager",
+  "role_name": "Maintenance Manager",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Maintenance Staff",
+  "role_name": "Maintenance Staff",
+  "desk_access": 1,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Auditor",
+  "role_name": "Auditor",
+  "desk_access": 1,
+  "is_custom": 1
+ }
+]
